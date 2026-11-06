@@ -26,7 +26,7 @@
 - [x] Levels: slots cleared on completion, per-level speed multiplier (+10%, capped), tests incl. cap (spec: scoring-and-levels.md)
 - [x] Per-life 30s timer; expiry kills frog (spec: game-flow-and-ui.md)
 - [x] Game state machine `title -> playing -> (paused) -> gameover -> title`; final score + new-high-score flag (spec: game-flow-and-ui.md)
-- [ ] High score persistence via injectable storage with safe fallback (mocked storage tests) (spec: game-flow-and-ui.md)
+- [x] High score persistence via injectable storage with safe fallback (mocked storage tests) (spec: game-flow-and-ui.md)
 
 ### Phase 2: Input
 - [ ] Input command layer + keyboard (arrows/WASD, ignore `event.repeat`, start/pause/mute keys) (spec: input-devices.md, player-movement.md)
