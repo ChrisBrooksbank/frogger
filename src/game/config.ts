@@ -25,3 +25,4 @@ export const START_ROW = ROWS - 1;
 
 export const HOP_DURATION = 0.12; // seconds
 export const INITIAL_LIVES = 3;
+export const LIFE_TIME = 30; // seconds per life
