@@ -17,6 +17,8 @@ export interface Frog {
   fromRow: number;
   /** Hop animation progress in [0, 1]; 1 = idle. */
   hopProgress: number;
+  /** Horizontal displacement in cells from being carried by a platform. */
+  offsetX: number;
   /** One-deep buffered direction, applied when the current hop ends. */
   buffered: Direction | null;
 }
@@ -28,6 +30,7 @@ export function createFrog(): Frog {
     fromCol: START_COL,
     fromRow: START_ROW,
     hopProgress: 1,
+    offsetX: 0,
     buffered: null,
   };
 }

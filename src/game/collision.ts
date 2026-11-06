@@ -8,7 +8,7 @@ export const FROG_HITBOX = 0.7;
 /** Continuous horizontal centre of the frog in cells, interpolating during a hop. */
 export function frogCenterX(frog: Frog): number {
   const x = frog.fromCol + (frog.col - frog.fromCol) * frog.hopProgress;
-  return x + 0.5;
+  return x + 0.5 + frog.offsetX;
 }
 
 /** True if the open intervals [aLeft, aLeft+aWidth) and [bLeft, bLeft+bWidth) overlap. */
