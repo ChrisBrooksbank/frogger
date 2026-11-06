@@ -21,7 +21,7 @@
 - [x] Data-driven lane layout (speed, direction, spacing, object widths per lane) + lane object update with wrap-around; deterministic (spec: traffic-and-river.md)
 - [x] Vehicle collision (kills), safe gap, safe rows (start/median/goal) (spec: traffic-and-river.md)
 - [x] River logic: platform overlap check, drowning, carry at platform velocity, off-screen carry death (spec: traffic-and-river.md)
-- [ ] Goal row: 5 slots, fill empty slot + respawn, wall/filled-slot death (spec: scoring-and-levels.md)
+- [x] Goal row: 5 slots, fill empty slot + respawn, wall/filled-slot death (spec: scoring-and-levels.md)
 - [ ] Scoring: +10 new furthest row per life, +50 slot, +10/sec time bonus, +1000 all slots, extra life at 20,000 once (spec: scoring-and-levels.md)
 - [ ] Levels: slots cleared on completion, per-level speed multiplier (+10%, capped), tests incl. cap (spec: scoring-and-levels.md)
 - [ ] Per-life 30s timer; expiry kills frog (spec: game-flow-and-ui.md)
