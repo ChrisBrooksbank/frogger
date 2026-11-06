@@ -18,7 +18,7 @@
 - [x] Core utilities: seeded RNG (e.g. mulberry32), fixed-timestep accumulator with injectable `dt`, typed event emitter for game events (spec: all; AGENTS.md)
 - [x] Grid/config constants (13x13, row roles: start, road, median, river, goal) and frog state: one-cell hops in 4 directions, bounds clamping, start at bottom-centre, hop animation progress, one-deep input buffer, no auto-repeat (spec: player-movement.md)
 - [x] Lives (3), death -> lose life -> respawn at start; tests for movement per direction/boundary, life loss, respawn (spec: player-movement.md)
-- [ ] Data-driven lane layout (speed, direction, spacing, object widths per lane) + lane object update with wrap-around; deterministic (spec: traffic-and-river.md)
+- [x] Data-driven lane layout (speed, direction, spacing, object widths per lane) + lane object update with wrap-around; deterministic (spec: traffic-and-river.md)
 - [ ] Vehicle collision (kills), safe gap, safe rows (start/median/goal) (spec: traffic-and-river.md)
 - [ ] River logic: platform overlap check, drowning, carry at platform velocity, off-screen carry death (spec: traffic-and-river.md)
 - [ ] Goal row: 5 slots, fill empty slot + respawn, wall/filled-slot death (spec: scoring-and-levels.md)
