@@ -15,7 +15,7 @@
 - [x] Vite `base: '/'`, README with dev/test/deploy steps (`npx netlify-cli deploy --build` and `--prod`; owner-run only), verify `netlify.toml` (already has build/publish/Node 22/headers) and that `dist/index.html` is produced. Do NOT run netlify commands (spec: deployment.md)
 
 ### Phase 1: Core logic (pure, in `src/game/*`, no DOM)
-- [ ] Core utilities: seeded RNG (e.g. mulberry32), fixed-timestep accumulator with injectable `dt`, typed event emitter for game events (spec: all; AGENTS.md)
+- [x] Core utilities: seeded RNG (e.g. mulberry32), fixed-timestep accumulator with injectable `dt`, typed event emitter for game events (spec: all; AGENTS.md)
 - [ ] Grid/config constants (13x13, row roles: start, road, median, river, goal) and frog state: one-cell hops in 4 directions, bounds clamping, start at bottom-centre, hop animation progress, one-deep input buffer, no auto-repeat (spec: player-movement.md)
 - [ ] Lives (3), death -> lose life -> respawn at start; tests for movement per direction/boundary, life loss, respawn (spec: player-movement.md)
 - [ ] Data-driven lane layout (speed, direction, spacing, object widths per lane) + lane object update with wrap-around; deterministic (spec: traffic-and-river.md)
