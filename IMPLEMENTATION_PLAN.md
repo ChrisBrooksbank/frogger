@@ -35,7 +35,7 @@
 
 ### Phase 3: Rendering and loop
 - [x] Theme module (palette + sizes; sole home of colour literals) (spec: visual-style.md)
-- [ ] Canvas renderer base: DPR scaling, responsive aspect-preserving resize, playfield/lane backgrounds, frog (spec: visual-style.md, input-devices.md)
+- [x] Canvas renderer base: DPR scaling, responsive aspect-preserving resize, playfield/lane backgrounds, frog (spec: visual-style.md, input-devices.md)
 - [ ] Draw functions per entity: vehicles (several types), logs, turtles, goal slots (spec: visual-style.md)
 - [ ] HUD (score, high score, lives, level, time bar) + title/game-over/pause screens, system font stack (spec: game-flow-and-ui.md, visual-style.md)
 - [ ] Main loop: requestAnimationFrame + fixed timestep, pause on tab hidden, wire input -> game -> render; expose test hooks (seed, frozen clock/animations) (spec: game-flow-and-ui.md)
