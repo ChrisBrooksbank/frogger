@@ -4,8 +4,9 @@ import { createGamepadPoller, browserGetPads } from './input/gamepad';
 import { attachKeyboard } from './input/keyboard';
 import { attachTouch } from './input/touch';
 import { createLoop } from './loop';
-import { drawBackground, drawFrog, createRenderer } from './render/renderer';
+import { drawBackground, drawFrog, frogCentre, createRenderer } from './render/renderer';
 import { drawGoalSlots, drawLanes } from './render/entities';
+import { createEffects, drawDeathEffects, drawWaterRipples } from './render/effects';
 import { drawUi, type HudData } from './render/hud';
 
 export const APP_NAME = 'Frogger';
@@ -44,9 +45,15 @@ if (canvas instanceof HTMLCanvasElement) {
   const params = new URLSearchParams(window.location.search);
   const seed = Number(params.get('seed') ?? 1) || 1;
   const manual = params.get('manual') === '1';
+  // `?frozen=1` freezes cosmetic animations (ripples, death effects) for screenshots.
+  const effects = createEffects({ frozen: params.get('frozen') === '1' });
 
   const renderer = createRenderer(canvas);
   const game = createGame({ seed });
+  game.events.on('death', ({ cause }) => {
+    const { x, y } = frogCentre(game.player.frog);
+    effects.addDeath(cause, x, y);
+  });
   const sink = createCommandSink();
   sink.subscribe((c) => game.handle(c));
   attachKeyboard(window, sink);
@@ -59,9 +66,11 @@ if (canvas instanceof HTMLCanvasElement) {
     renderer.resize();
     renderer.beginFrame();
     drawBackground(renderer.ctx);
+    drawWaterRipples(renderer.ctx, effects.time);
     drawGoalSlots(renderer.ctx, game.slots);
     drawLanes(renderer.ctx, game.lanes);
     drawFrog(renderer.ctx, game.player.frog);
+    drawDeathEffects(renderer.ctx, effects.deaths);
     drawUi(renderer.ctx, hudData(game));
   };
 
@@ -72,7 +81,10 @@ if (canvas instanceof HTMLCanvasElement) {
       isHidden: () => document.hidden,
     },
     {
-      update: (dt) => game.step(dt),
+      update: (dt) => {
+        game.step(dt);
+        effects.update(dt);
+      },
       render: () => {
         gamepad.poll();
         render();
@@ -90,7 +102,10 @@ if (canvas instanceof HTMLCanvasElement) {
     render,
     advance(seconds) {
       const steps = Math.round(seconds * 60);
-      for (let i = 0; i < steps; i++) game.step(1 / 60);
+      for (let i = 0; i < steps; i++) {
+        game.step(1 / 60);
+        effects.update(1 / 60);
+      }
       render();
     },
   };

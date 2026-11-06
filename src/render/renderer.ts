@@ -2,6 +2,7 @@ import { COLS, ROW_ROLES, ROWS, type RowRole } from '../game/config';
 import type { Frog } from '../game/frog';
 import { computeLayout, LOGICAL_HEIGHT, LOGICAL_WIDTH } from './layout';
 import { CELL, palette } from './theme';
+import { hopPose } from './effects';
 
 const ROW_COLOURS: Record<RowRole, string> = {
   goal: palette.goalBank,
@@ -41,8 +42,24 @@ export function drawBackground(ctx: CanvasRenderingContext2D): void {
 }
 
 export function drawFrog(ctx: CanvasRenderingContext2D, frog: Frog): void {
-  const { x, y } = frogCentre(frog);
+  const centre = frogCentre(frog);
+  const pose = hopPose(frog.hopProgress);
+  const x = centre.x;
+  const y = centre.y - pose.lift;
   const r = CELL * 0.36;
+  if (pose.lift > 0) {
+    // Shadow stays on the ground while the frog arcs above it.
+    ctx.fillStyle = palette.frogPupil;
+    ctx.globalAlpha = 0.25;
+    ctx.beginPath();
+    ctx.ellipse(centre.x, centre.y + r * 0.6, r * 0.8, r * 0.3, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.scale(pose.scaleX, pose.scaleY);
+  ctx.translate(-x, -y);
   ctx.fillStyle = palette.frog;
   ctx.beginPath();
   ctx.ellipse(x, y, r, r * 0.92, 0, 0, Math.PI * 2);
@@ -61,6 +78,7 @@ export function drawFrog(ctx: CanvasRenderingContext2D, frog: Frog): void {
     ctx.arc(x + dx * r * 0.5, y - r * 0.65, r * 0.12, 0, Math.PI * 2);
     ctx.fill();
   }
+  ctx.restore();
 }
 
 export interface Renderer {

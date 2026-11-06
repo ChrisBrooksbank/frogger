@@ -39,7 +39,7 @@
 - [x] Draw functions per entity: vehicles (several types), logs, turtles, goal slots (spec: visual-style.md)
 - [x] HUD (score, high score, lives, level, time bar) + title/game-over/pause screens, system font stack (spec: game-flow-and-ui.md, visual-style.md)
 - [x] Main loop: requestAnimationFrame + fixed timestep, pause on tab hidden, wire input -> game -> render; expose test hooks (seed, frozen clock/animations) (spec: game-flow-and-ui.md)
-- [ ] Animations: hop arc/squash, water ripple, death splat/splash; all freezable under test (spec: visual-style.md)
+- [x] Animations: hop arc/squash, water ripple, death splat/splash; all freezable under test (spec: visual-style.md)
 
 ### Phase 4: Extras
 - [ ] Diving turtles cycle (surfaced/sinking/submerged/rising), drowning when submerged, sinking warning visual (spec: extra-hazards-and-bonuses.md)
