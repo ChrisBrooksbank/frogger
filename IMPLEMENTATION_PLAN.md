@@ -2,7 +2,7 @@
 
 ## Status
 
-- Planning iterations: 2 (re-verified: no src/, no package.json; plan unchanged and still valid)
+- Planning iterations: 3 (re-verified: no src/, e2e/ or tests/; plan unchanged and still valid)
 - Build iterations: 0
 - Last updated: 2026-11-06
 - Codebase state: empty (only specs, prompts, loop scripts, AGENTS.md, netlify.toml). Nothing implemented.
