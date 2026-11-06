@@ -23,7 +23,7 @@
 - [x] River logic: platform overlap check, drowning, carry at platform velocity, off-screen carry death (spec: traffic-and-river.md)
 - [x] Goal row: 5 slots, fill empty slot + respawn, wall/filled-slot death (spec: scoring-and-levels.md)
 - [x] Scoring: +10 new furthest row per life, +50 slot, +10/sec time bonus, +1000 all slots, extra life at 20,000 once (spec: scoring-and-levels.md)
-- [ ] Levels: slots cleared on completion, per-level speed multiplier (+10%, capped), tests incl. cap (spec: scoring-and-levels.md)
+- [x] Levels: slots cleared on completion, per-level speed multiplier (+10%, capped), tests incl. cap (spec: scoring-and-levels.md)
 - [ ] Per-life 30s timer; expiry kills frog (spec: game-flow-and-ui.md)
 - [ ] Game state machine `title -> playing -> (paused) -> gameover -> title`; final score + new-high-score flag (spec: game-flow-and-ui.md)
 - [ ] High score persistence via injectable storage with safe fallback (mocked storage tests) (spec: game-flow-and-ui.md)
