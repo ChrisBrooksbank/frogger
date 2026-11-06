@@ -30,7 +30,7 @@
 
 ### Phase 2: Input
 - [x] Input command layer + keyboard (arrows/WASD, ignore `event.repeat`, start/pause/mute keys) (spec: input-devices.md, player-movement.md)
-- [ ] Touch: swipe classification (direction, min threshold), tap = start, preventDefault for scroll/zoom, on-screen d-pad (spec: input-devices.md)
+- [x] Touch: swipe classification (direction, min threshold), tap = start, preventDefault for scroll/zoom, on-screen d-pad (spec: input-devices.md)
 - [ ] Gamepad polling: d-pad + left stick with dead zone, edge-triggered, Start = start/pause (spec: input-devices.md)
 
 ### Phase 3: Rendering and loop
