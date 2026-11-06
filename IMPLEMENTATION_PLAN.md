@@ -2,7 +2,7 @@
 
 ## Status
 
-- Planning iterations: 35 (re-verified: no src/ or package.json; plan unchanged and valid; next step is build mode at Phase 0)
+- Planning iterations: 36 (re-verified: no src/ or package.json; plan unchanged and valid; next step is build mode at Phase 0)
 - Build iterations: 0
 - Last updated: 2026-11-06
 - Codebase state: empty (only specs, prompts, loop scripts, AGENTS.md, netlify.toml). Nothing implemented.
