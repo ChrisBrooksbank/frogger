@@ -3,14 +3,14 @@
 ## Status
 
 - Planning iterations: 57 (re-verified: no src/ or package.json; plan unchanged and valid; next step is build mode at Phase 0)
-- Build iterations: 0
+- Build iterations: 1
 - Last updated: 2026-11-06
 - Codebase state: empty (only specs, prompts, loop scripts, AGENTS.md, netlify.toml). Nothing implemented.
 
 ## Tasks (priority order; one task = one build iteration)
 
 ### Phase 0: Tooling
-- [ ] Bootstrap Vite + TypeScript (strict) + ESLint + Prettier + Vitest; scripts `dev`, `build` (tsc + vite build), `test`, `test:run`, `lint`, `format:check`, `typecheck`, `check`; minimal `index.html` + `src/main.ts` + a trivial passing unit test (spec: all; AGENTS.md)
+- [x] Bootstrap Vite + TypeScript (strict) + ESLint + Prettier + Vitest; scripts `dev`, `build` (tsc + vite build), `test`, `test:run`, `lint`, `format:check`, `typecheck`, `check`; minimal `index.html` + `src/main.ts` + a trivial passing unit test (spec: all; AGENTS.md)
 - [ ] Add Playwright with `test:e2e` / `test:e2e:update`, webServer on `vite preview` of the production build, one smoke test (canvas present, no console errors) (spec: deployment.md, visual-style.md)
 - [ ] Vite `base: '/'`, README with dev/test/deploy steps (`npx netlify-cli deploy --build` and `--prod`; owner-run only), verify `netlify.toml` (already has build/publish/Node 22/headers) and that `dist/index.html` is produced. Do NOT run netlify commands (spec: deployment.md)
 
