@@ -4,6 +4,8 @@
 
 **A modern, clean-vector take on the 1981 arcade classic, built with TypeScript and HTML canvas.**
 
+### [▶ Play it live: frogger-cb-arcade.netlify.app](https://frogger-cb-arcade.netlify.app)
+
 ![Gameplay: the frog dodges traffic, rides logs and turtles, and fills the goal slots](docs/gameplay.gif)
 
 _Above: a real run of this game, played by a look-ahead bot (see [`scripts/capture-readme.mjs`](scripts/capture-readme.mjs))._
@@ -47,6 +49,8 @@ Hop across the road, ride logs and turtles over the river, and slot all five fro
 Each level speeds traffic and river up by 10%, capped at 2×. High score is saved in `localStorage`.
 
 ## Play it
+
+Online: **https://frogger-cb-arcade.netlify.app**. Or run it locally:
 
 ```bash
 git clone https://github.com/ChrisBrooksbank/frogger.git
@@ -98,7 +102,7 @@ npm run build && npx vite preview --port 4173 &
 node scripts/capture-readme.mjs   # needs ffmpeg
 ```
 
-Deployment is a static Netlify site (`netlify.toml`, publish `dist`), deployed manually by the owner.
+Deployment is a static Netlify site (`netlify.toml`, publish `dist`) at https://frogger-cb-arcade.netlify.app, deployed manually by the owner.
 
 ---
 
